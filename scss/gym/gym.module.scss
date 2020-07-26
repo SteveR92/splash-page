@@ -1,0 +1,109 @@
+.gymContainer {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f3f2f2;
+  font-family: "roboto", sans;
+
+  .imgContainer {
+    display: flex;
+    justify-content: center;
+
+    .circle {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: white;
+      position: absolute;
+      z-index: 0;
+    }
+
+    img {
+      width: 400px;
+      margin: auto;
+      z-index: 1;
+    }
+  }
+
+  .textContainer {
+    width: 80%;
+    text-align: center;
+    margin-top: 80px;
+
+    h2 {
+      padding: 0;
+      margin: 0;
+    }
+
+    h3 {
+      font-weight: 200;
+    }
+
+    p {
+      text-align: left;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+    }
+  }
+
+  .buttonContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+
+    button {
+      background: #323232;
+      color: #f9f9f9;
+      border: none;
+      border-radius: 100px 100px 100px 100px;
+      padding: 15px;
+      width: 150px;
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .gymContainer {
+    .imgContainer {
+      .circle {
+        width: 350px;
+        height: 350px;
+      }
+      img {
+        width: 500px;
+      }
+    }
+    .textContainer {
+      width: 100%;
+      margin-top: 0%;
+
+      h2,
+      h3 {
+        padding-bottom: 40px;
+      }
+
+      h2 {
+        font-size: 1.9rem;
+      }
+
+      h3 {
+        font-size: 1.4rem;
+        width: 90%;
+        margin: auto;
+      }
+    }
+
+    .buttonContainer {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    .button {
+      margin: 0 50px 0 50px;
+    }
+  }
+}

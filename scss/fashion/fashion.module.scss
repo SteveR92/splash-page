@@ -1,0 +1,277 @@
+.fashionContainer {
+  position: relative;
+  height: 100vh;
+  background-image: url("../../images/fashion.jpg");
+  background-position: 48% 32%;
+  background-size: 1000%;
+  background-repeat: no-repeat;
+  overflow-y: hidden;
+
+  input {
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    width: 250px;
+    color: white;
+    padding: 2px;
+    font-size: 1.4rem;
+    font-family: "roboto", sans;
+    font-weight: 100;
+    letter-spacing: 3px;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  input::placeholder {
+    color: white;
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+    font-weight: 100;
+    font-family: "roboto", sans;
+  }
+
+  h2 {
+    padding: 0;
+    margin: 0;
+  }
+
+  #button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: none;
+    font-size: 1.2rem;
+    border: 1px solid white;
+    color: white;
+    float: right;
+    padding: 8px;
+    margin: 4px;
+  }
+}
+
+.inputContainer {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+
+  input {
+    padding-top: 10px;
+  }
+}
+
+.pinkBox {
+  position: absolute;
+  right: 0;
+  top: 9%;
+  z-index: 0;
+  width: 200px;
+  height: 550px;
+  background: rgba(242, 33, 234, 0.29);
+}
+
+.contentContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+}
+
+.titleContainer {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  color: white;
+  font-family: "Liu Jian Mao Cao", cursive;
+  font-size: 4rem;
+  font-weight: 100;
+  z-index: 100;
+  width: 100%;
+  text-align: center;
+}
+
+.bottomTextContainer {
+  position: absolute;
+  bottom: 25%;
+  right: 15px;
+  text-align: right;
+  width: 95%;
+  color: white;
+  font-family: "roboto", sans;
+  font-size: 1.2rem;
+  font-weight: 200;
+  letter-spacing: 2px;
+
+  button {
+    padding: 10px;
+    width: 150px;
+  }
+}
+
+#viewButton {
+  color: white;
+  background: none;
+}
+
+.button {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  //   align-items: center;
+
+  img {
+    width: 50%;
+    padding: 20px;
+  }
+
+  @mixin btn-border-drawing(
+    $color: #ccc,
+    $hover: black,
+    $width: 2px,
+    $vertical: top,
+    $horizontal: left,
+    $duration: 0.25s
+  ) {
+    box-shadow: inset 0 0 0 $width $color;
+    color: $color;
+    transition: color $duration $duration/3;
+    position: relative;
+    width: 150px;
+
+    &::before,
+    &::after {
+      border: 0 solid transparent;
+      box-sizing: border-box;
+      content: "";
+      pointer-events: none;
+      position: absolute;
+      width: 0;
+      height: 0;
+
+      #{$vertical}: 0;
+      #{$horizontal}: 0;
+    }
+
+    &::before {
+      $h-side: if($horizontal == "left", "right", "left");
+
+      border-#{$vertical}-width: $width;
+      border-#{$h-side}-width: $width;
+    }
+
+    &::after {
+      $v-side: if($vertical == "top", "bottom", "top");
+
+      border-#{$v-side}-width: $width;
+      border-#{$horizontal}-width: $width;
+    }
+
+    &:hover {
+      color: $hover;
+
+      &::before,
+      &::after {
+        border-color: $hover;
+        transition: border-color 0s, width $duration, height $duration;
+        width: 100%;
+        height: 100%;
+      }
+
+      &::before {
+        transition-delay: 0s, 0s, $duration;
+      }
+
+      &::after {
+        transition-delay: 0s, $duration, 0s;
+      }
+    }
+  }
+
+  .draw_border {
+    @include btn-border-drawing(
+      #ffffff,
+      rgba(242, 33, 234, 0.29),
+      3px,
+      bottom,
+      right
+    );
+  }
+
+  //=== Button styling, semi-ignore
+  .btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1.5;
+    padding: 1em 2em;
+    letter-spacing: 0.05rem;
+  }
+
+  //=== Pen styling, ignore
+}
+
+@media (min-width: 800px) {
+  .fashionContainer {
+    background-size: 298%;
+    background-position: 55% 33%;
+
+    #button {
+      border: 1px solid black;
+      color: black;
+      font-size: 1rem;
+      padding: 6px;
+    }
+  }
+
+  .pinkBox {
+    width: 90%;
+    height: 80%;
+    top: 10%;
+    right: 5%;
+  }
+
+  .contentContainer {
+    // padding-top: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: right;
+    height: 100vh;
+    width: 40%;
+    float: right;
+    margin-right: 4%;
+  }
+
+  .titleContainer {
+    position: relative;
+
+    h2 {
+      padding: 20px;
+      margin: 20px;
+    }
+  }
+
+  .bottomTextContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 10%;
+    bottom: 12%;
+
+    p {
+      padding: 20px;
+      margin: 0;
+    }
+  }
+}

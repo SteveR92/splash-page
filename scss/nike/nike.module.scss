@@ -1,0 +1,162 @@
+.nikeContainer {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  .nikeImg {
+    height: 100vh;
+    filter: grayscale(100%);
+    z-index: -1;
+  }
+
+  .sign {
+    position: absolute;
+    z-index: 200;
+    right: 5px;
+    top: 5px;
+
+    button {
+      background: none;
+      color: white;
+      padding: 5px;
+      width: 80px;
+      border: 2px solid white;
+    }
+  }
+
+  input,
+  label {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    z-index: 100;
+    cursor: pointer;
+  }
+
+  .spanText {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    width: 190px;
+    position: absolute;
+    bottom: 28px;
+    right: -20px;
+    color: white;
+    font-size: 1.2rem;
+    font-family: "roboto", sans;
+    letter-spacing: 3px;
+    z-index: 1000;
+    cursor: pointer;
+  }
+
+  .hoverColor {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: red;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+    }
+
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 10px rgba(255, 3, 3, 0);
+    }
+
+    100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+    }
+  }
+
+  input {
+    display: none;
+    span {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      position: absolute;
+      z-index: 100;
+      bottom: 5%;
+      right: 5%;
+    }
+
+    &:checked + label ~ .nikeImg {
+      filter: grayscale(0);
+      transition: 0.5s;
+      transition-timing-function: ease-in;
+    }
+  }
+}
+
+.pressContainer {
+  position: absolute;
+  bottom: 100px;
+  right: 0;
+  z-index: 100;
+  // width: 40px;
+  h3 {
+    color: white;
+    font-family: "Indie Flower", cursive;
+    margin: 0;
+    padding: 0;
+  }
+
+  img {
+    width: 20%;
+    transform: translateX(20px);
+  }
+}
+
+@media (max-width: 600px) {
+  .nikeContainer {
+    .nikeImg {
+      min-width: 100vw;
+      max-height: 100%;
+      transform: translateX(-30%);
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .nikeContainer {
+    .nikeImg {
+      min-width: 100vw;
+      max-height: 100%;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .pressContainer {
+    right: -50px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 800px) {
+  .nikeContainer {
+    .nikeImg {
+      transform: scale(1.2);
+      transform: translateX(-17%);
+    }
+  }
+  // .pressContainer {
+  //   right: -20px;
+  // }
+}
+
+@media (min-width: 1000px) {
+  .nikeContainer {
+    .nikeImg {
+      transform: scale(1.5);
+      width: 90%;
+      height: 100%;
+    }
+  }
+}
