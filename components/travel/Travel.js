@@ -3,8 +3,8 @@ import img from "../../images/travel.png";
 import { Fade, Slide, Bounce } from "react-awesome-reveal";
 import PhoneAndroidIcon from "@material-ui/icons/PhoneAndroid";
 import TabletAndroidIcon from "@material-ui/icons/TabletAndroid";
-import test from "../../images/test.png";
-import upad from "../../images/ipad.png";
+import mobile from "../../images/screenshots/travelMobile.png";
+import tablet from "../../images/screenshots/travelTablet.png";
 const Travel = () => {
   return (
     <Fade delay={1000} triggerOnce>
@@ -42,11 +42,11 @@ const Travel = () => {
         </div>
         <div className={styles.phoneContainer}>
           <PhoneAndroidIcon id={styles.phoneIcon} />
-          <img src={test} id={styles.phoneImage} />
+          <img src={mobile} id={styles.phoneImage} />
         </div>
         <div className={styles.tabletContainer}>
           <TabletAndroidIcon id={styles.tabletIcon} />
-          <img src={upad} id={styles.tabletImage} />
+          <img src={tablet} id={styles.tabletImage} />
         </div>
       </div>
     </Fade>

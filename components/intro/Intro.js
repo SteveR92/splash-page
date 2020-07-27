@@ -3,8 +3,8 @@ import styles from "../../scss/intro/intro.module.scss";
 import img from "../../images/desktopman.png";
 import PhoneAndroidIcon from "@material-ui/icons/PhoneAndroid";
 import TabletAndroidIcon from "@material-ui/icons/TabletAndroid";
-import test from "../../images/test.png";
-import upad from "../../images/ipad.png";
+import mobile from "../../images/screenshots/introMobile.png";
+import tablet from "../../images/screenshots/introTablet.png";
 const Intro = () => {
   return (
     <Fade cascade>
@@ -32,11 +32,11 @@ const Intro = () => {
         </div>
         <div className={styles.phoneContainer}>
           <PhoneAndroidIcon id={styles.phoneIcon} />
-          <img src={test} id={styles.phoneImage} />
+          <img src={mobile} id={styles.phoneImage} />
         </div>
         <div className={styles.tabletContainer}>
           <TabletAndroidIcon id={styles.tabletIcon} />
-          <img src={upad} id={styles.tabletImage} />
+          <img src={tablet} id={styles.tabletImage} />
         </div>
         <div className={styles.arrowContainer}>
           <h4 className={styles.h4}>Scroll</h4>
