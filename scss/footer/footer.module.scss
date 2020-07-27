@@ -3,10 +3,12 @@
   width: 100vw;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   position: relative;
+  background: #f5f4f1;
 
   .writingContainer {
     width: 30%;
@@ -25,8 +27,40 @@
       width: 100%;
     }
 
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      margin-top: 50px;
+
+      li {
+        float: right;
+        padding-right: 10px;
+      }
+    }
+
+    .footer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transform: translateY(100%);
+      width: 100vw;
+      z-index: 0;
+      h3 {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        margin-top: 20px;
+      }
+    }
+
     .spanUnderline {
-      background-image: linear-gradient(120deg, #e3f1f4 0%, #e3f1f4 100%);
+      background-image: linear-gradient(
+        120deg,
+        rgb(21, 129, 195) 0%,
+        rgb(21, 129, 195) 100%
+      );
       background-repeat: no-repeat;
       background-size: 100% 0.4em;
       background-position: 0 88%;
@@ -34,15 +68,15 @@
     }
 
     .colorWriting {
-      color: #49aebf;
+      color: black;
     }
 
     .button {
+      z-index: 1000;
       cursor: pointer;
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 15px;
 
       img {
         width: 50%;
@@ -114,8 +148,8 @@
 
       .draw_border {
         @include btn-border-drawing(
-          #49aebf,
-          rgb(239, 92, 55),
+          rgb(21, 129, 195),
+          black,
           4px,
           bottom,
           right
@@ -124,7 +158,7 @@
 
       //=== Button styling, semi-ignore
       .btn {
-        background: none;
+        background: white;
         border: none;
         cursor: pointer;
         line-height: 1.5;
@@ -146,21 +180,28 @@
 }
 
 .phoneContainer {
-  width: 100%;
+  width: 40%;
   position: absolute;
-  left: 46%;
-  bottom: 0;
-  z-index: 1000;
+  top: 50%;
+  left: 0;
+  padding-bottom: 40px;
 
   img {
     width: 300px;
     opacity: 0;
     position: absolute;
     left: 10%;
-    transform: translateY(-100%);
+    transform: translateY(-40%);
     box-shadow: 9px 12px 5px 0px rgba(0, 0, 0, 0.09);
     transition: 1s;
   }
+}
+
+#phoneIcon,
+#tabletIcon {
+  font-size: 2rem;
+  padding-left: 10px;
+  padding-bottom: 20px;
 }
 
 #phoneIcon:hover ~ #phoneImage {
@@ -169,31 +210,23 @@
 
 #phoneIcon:hover {
   cursor: pointer;
-  color: rgb(239, 92, 55);
+  color: rgb(21, 129, 195);
   transition: 0.5s;
 }
 
-#phoneIcon,
-#tabletIcon {
-  font-size: 2rem;
-  padding: 10px;
-  color: rgb(78, 174, 190);
-}
-
 .tabletContainer {
-  width: 100%;
+  width: 40%;
   position: absolute;
-  left: 50%;
-  bottom: 0;
-  margin-top: 4%;
-  z-index: 1000;
+  left: 0;
+  transform: translateY(100%);
+  top: 50%;
 
   img {
     width: 300px;
     opacity: 0;
     position: absolute;
     left: 10%;
-    transform: translateY(-100%);
+    transform: translateY(-40%);
     box-shadow: 9px 12px 5px 0px rgba(0, 0, 0, 0.09);
     transition: 1s;
   }
@@ -205,8 +238,14 @@
 
 #tabletIcon:hover {
   cursor: pointer;
-  color: rgb(239, 92, 55);
+  color: rgb(21, 129, 195);
   transition: 0.5s;
+}
+
+#cat {
+  position: absolute;
+  bottom: 0;
+  width: 10%;
 }
 
 @media (max-width: 800px) {
@@ -232,6 +271,9 @@
         margin: 0;
       }
     }
+  }
+  #cat {
+    width: 20%;
   }
 
   #phoneIcon,

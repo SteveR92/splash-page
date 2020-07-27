@@ -2,6 +2,10 @@ import styles from "../../scss/nike/nike.module.scss";
 import img from "../../images/nike.jpg";
 import { Fade, Slide } from "react-awesome-reveal";
 import arrow from "../../images/arrow.png";
+import PhoneAndroidIcon from "@material-ui/icons/PhoneAndroid";
+import TabletAndroidIcon from "@material-ui/icons/TabletAndroid";
+import test from "../../images/test.png";
+import upad from "../../images/ipad.png";
 const Nike = () => {
   return (
     <Fade delay={1000} triggerOnce>
@@ -21,6 +25,14 @@ const Nike = () => {
           </label>
           <img src={img} alt="nike shoe" className={styles.nikeImg} />
         </Fade>
+        <div className={styles.phoneContainer}>
+          <PhoneAndroidIcon id={styles.phoneIcon} />
+          <img src={test} id={styles.phoneImage} />
+        </div>
+        <div className={styles.tabletContainer}>
+          <TabletAndroidIcon id={styles.tabletIcon} />
+          <img src={upad} id={styles.tabletImage} />
+        </div>
       </div>
     </Fade>
   );

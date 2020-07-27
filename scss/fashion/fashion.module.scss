@@ -120,10 +120,75 @@
   background: none;
 }
 
+.phoneContainer {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  padding-bottom: 40px;
+
+  img {
+    width: 300px;
+    opacity: 0;
+    position: absolute;
+    left: 10%;
+    transform: translateY(-40%);
+    box-shadow: 9px 12px 5px 0px rgba(0, 0, 0, 0.09);
+    transition: 1s;
+  }
+}
+
+#phoneIcon,
+#tabletIcon {
+  font-size: 2rem;
+  padding-left: 10px;
+  color: white;
+  padding-bottom: 20px;
+}
+
+#phoneIcon:hover ~ #phoneImage {
+  opacity: 1;
+}
+
+#phoneIcon:hover {
+  cursor: pointer;
+  color: rgba(203, 39, 224, 0.5);
+  transition: 0.5s;
+}
+
+.tabletContainer {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  transform: translateY(100%);
+  top: 50%;
+
+  img {
+    width: 300px;
+    opacity: 0;
+    position: absolute;
+    left: 10%;
+    transform: translateY(-40%);
+    box-shadow: 9px 12px 5px 0px rgba(0, 0, 0, 0.09);
+    transition: 1s;
+  }
+}
+
+#tabletIcon:hover ~ #tabletImage {
+  opacity: 1;
+}
+
+#tabletIcon:hover {
+  cursor: pointer;
+  color: rgba(203, 39, 224, 0.5);
+  transition: 0.5s;
+}
+
 .button {
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  margin-top: 10%;
   //   align-items: center;
 
   img {
@@ -215,6 +280,13 @@
   }
 
   //=== Pen styling, ignore
+}
+
+@media (max-width: 800px) {
+  #phoneIcon,
+  #tabletIcon {
+    display: none;
+  }
 }
 
 @media (min-width: 800px) {

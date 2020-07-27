@@ -1,6 +1,9 @@
 import { Fade, Slide, Bounce } from "react-awesome-reveal";
 import styles from "../../scss/fashion/fashion.module.scss";
-
+import PhoneAndroidIcon from "@material-ui/icons/PhoneAndroid";
+import TabletAndroidIcon from "@material-ui/icons/TabletAndroid";
+import test from "../../images/test.png";
+import upad from "../../images/ipad.png";
 const Fashion = () => {
   return (
     <Fade cascade triggerOnce>
@@ -36,6 +39,14 @@ const Fashion = () => {
               </Fade>
             </div>
           </div>
+        </div>
+        <div className={styles.phoneContainer}>
+          <PhoneAndroidIcon id={styles.phoneIcon} />
+          <img src={test} id={styles.phoneImage} />
+        </div>
+        <div className={styles.tabletContainer}>
+          <TabletAndroidIcon id={styles.tabletIcon} />
+          <img src={upad} id={styles.tabletImage} />
         </div>
       </div>
     </Fade>
